@@ -1,0 +1,21 @@
+<!DOCTYPE >
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<p>Welcome to chat app</p>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+
+    socket.on('connect', () => {
+        console.log("connected to server")
+    })
+
+    socket.on('disconnect', () =>{
+        console.log("server disconnected.")
+    })
+</script>
+</body>
+</html>
