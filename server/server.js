@@ -20,10 +20,11 @@ io.on('connection', (socket)=>{
 	socket.emit('newMsg',generateMessage('Admin','Welcome to chat app'));
 	
 	socket.broadcast.emit('newMsg',generateMessage('Admin','New user joined'));
-      socket.on('createMessage',(msg,callback) => {
+
+	socket.on('createMessage',(msg,callback) => {
         console.log(msg)
 		io.emit('newMsg',generateMessage(msg.from,msg.text));
-        callback('from server');
+        callback('');
     });
 
     socket.on('createLocationMessage',(coords) => {
